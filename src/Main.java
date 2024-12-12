@@ -13,7 +13,7 @@ public class Main {
         fi1.Sample1();
         Functional_Interface_2 fi2 = (a,b)-> System.out.print("\nSUM IS::"+(a+b));
         fi2.sample2(50,40);
-        Functional_Interface_3 fi3= (s)-> s.length();
+        Functional_Interface_3 fi3= String::length;
         System.out.print("\n\nLENGTH:"+fi3.strLength("PRANAY"));
         //list of unique integers
         ImperativeDeclarative.Imperative(Arrays.asList(1,2,2,3,4,6,6,6,12,0,0,7));
