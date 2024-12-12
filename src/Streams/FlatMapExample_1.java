@@ -10,7 +10,7 @@ public class FlatMapExample_1 {
     public static List<String> getActivityList(){
        List<String> activities= StudentDataBase.getAllStudents().stream()
                 .map(Student::getActivities) //Stream<List<String>>
-                .flatMap(List::stream).toList();
+                .flatMap(List::stream).distinct().sorted().toList();
        return activities;
    }
 
