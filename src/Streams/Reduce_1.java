@@ -10,18 +10,22 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Reduce_1 {
 
-    public static Integer reduceSample(){
+    public static Double reduceSample(){
         List<Integer> product= Arrays.asList(2,4,7,9,23);
-        return product.stream()
+         product.stream()
                 .reduce(1,(a,b)->a*b);
-        /*AtomicLong gpa=new AtomicLong(0);
-        StudentDataBase.getAllStudents()
+
+       Double sumOfFemaleGPA= StudentDataBase.getAllStudents()
                 .stream()
                 .filter(student -> student.getGender().equalsIgnoreCase("female"))
-                .map(student -> gpa+student.getGpa());*/
+                .map(Student::getGpa)
+                .reduce(0d,(a,b)-> a+b);
+    //Add return statements accordingly
+        return sumOfFemaleGPA;
     }
 
     public static void main(String[] args){
-       System.out.print("\nProduct::"+reduceSample());
+       //System.out.print("\nProduct::"+reduceSample());
+        System.out.print("\nSum Of Female Gpa::"+reduceSample());
     }
 }
