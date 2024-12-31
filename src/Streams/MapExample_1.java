@@ -12,10 +12,9 @@ public class MapExample_1 {
     }
 
     public static List<String> getNamesList(){
-       List<String> stdNames= StudentDataBase.getAllStudents().stream() //Stream<Student>
+        return StudentDataBase.getAllStudents().stream() //Stream<Student>
                 .map(Student::getName) //Stream<String>
                .map(String::toUpperCase)
                .toList();
-        return stdNames;
     }
 }
