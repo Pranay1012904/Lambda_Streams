@@ -14,7 +14,8 @@ public class Reduce {
         //f_1();
         //f_2();
         //f_3();
-        f_4();
+        //f_4();
+        f_5();
     }
 
     public static void f_1() {
@@ -51,7 +52,13 @@ public class Reduce {
         System.out.println("MAX :: " + max);
 
         OptionalInt max2 = list.stream().mapToInt(Integer::intValue).max();
-        System.out.println("MAX-2 :: "+max2.getAsInt());
+        System.out.println("MAX-2 :: " + max2.getAsInt());
+    }
 
+    public static void f_5() {
+        Optional<Student> std = StudentDataBase.getAllStudents()
+                .stream()
+                .reduce((a, b) -> a.getNoteBooks() > b.getNoteBooks() ? a : b);
+        System.out.println(std.get());
     }
 }
