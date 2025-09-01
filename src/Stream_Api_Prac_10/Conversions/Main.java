@@ -19,5 +19,7 @@ public class Main {
         Integer[] IArr = Arrays.stream(iArr).boxed().toArray(Integer[]::new);
         List<Integer> iL = IntStream.of(iArr).boxed().toList();
         int[] rr=iL.stream().mapToInt( Integer::intValue).toArray();
+        Integer i=67;
+
     }
 }
